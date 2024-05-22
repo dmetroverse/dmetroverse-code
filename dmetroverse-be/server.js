@@ -7,8 +7,7 @@ const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 3000;
 const fePort = process.env.FE_PORT
-const feUrl = process.env.FE_URL;
-const fePath = process.env.FE_PATH || ''; // Default to an empty string if FE_PATH is not defined
+const feUrl = process.env.FE_URL; // Default to an empty string if FE_PATH is not defined
 
 // Configure CORS options dynamically
 const corsOptions = {
@@ -27,7 +26,7 @@ const getCurrentTimeInIST = () => {
 };
 
 app.get('/', (req, res) => {
-  res.redirect(`${feUrl}${fePath}`);
+  res.redirect(`${feUrl}`);
 });
 
 // Validate parameters before proceeding
